@@ -12,9 +12,16 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import meme from "../images/meme.png";
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
+  root: {
+    fontFamily: "Nunito",
+    color: "black",
+  },
+  meme: {
+    backgroundColor: "white",
+  },
 }));
 
 function Navbar() {
@@ -43,7 +50,7 @@ function Navbar() {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.root}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -97,7 +104,7 @@ function Navbar() {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
-              LOGO
+              MEME GEN
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
@@ -114,7 +121,11 @@ function Navbar() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                  <Avatar
+                    alt="Remy Sharp"
+                    src={meme}
+                    className={classes.meme}
+                  />
                 </IconButton>
               </Tooltip>
               <Menu
